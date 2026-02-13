@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 
+<!-- Website preview image -->
+<meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQF8IkVhA-RsSA/profile-displayphoto-scale_200_200/B4EZrCKZrFGUAY-/0/1764194098976?e=2147483647&v=beta&t=S5F6-7Gw5V9QYBt1XOzL4Y73H4rUerZ0aLwwIAEi5LA">
+
 <!-- Prevents permanent zoom -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Valentine</title>
+<title>Lauren, u so cool</title>
 
 <style>
 body {
@@ -41,6 +44,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    align-items: center;
 }
 
 button {
@@ -54,10 +58,19 @@ button {
 #yesBtn {
     background-color: #ff4d6d;
     color: white;
+    transition: transform 0.2s;
 }
 
 #yesBtn:hover {
     transform: scale(1.05);
+}
+
+.no-wrapper {
+    width: 90px;   /* Keeps the Yes button in place */
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #noBtn {
@@ -103,7 +116,10 @@ input {
     <h1>Lauren, will you be my valentine?</h1>
     <div class="buttons">
         <button id="yesBtn">Yes</button>
-        <button id="noBtn">No</button>
+
+        <div class="no-wrapper">
+            <button id="noBtn">No</button>
+        </div>
     </div>
 </div>
 
@@ -129,7 +145,6 @@ setTimeout(enableDodging, 500);
 function enableDodging() {
 
     function moveNoButton() {
-
         const padding = 20;
         const maxX = window.innerWidth - noBtn.offsetWidth - padding;
         const maxY = window.innerHeight - noBtn.offsetHeight - padding;
